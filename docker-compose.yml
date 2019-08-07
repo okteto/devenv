@@ -21,6 +21,11 @@ services:
       context: .
       dockerfile: node/Dockerfile
     image: okteto/node:10
+  openfaas:
+    build:
+      context: .
+      dockerfile: openfaas/Dockerfile
+    image: okteto/openfaas:golang
   python:
     build:
       context: .
