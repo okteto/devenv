@@ -25,6 +25,9 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" -o /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
+# install okteto
+RUN curl https://get.okteto.com -sSfL | sh
+
 # setup okteto message
 COPY bashrc /root/.bashrc
 
