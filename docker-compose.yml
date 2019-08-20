@@ -1,38 +1,43 @@
-version: '3.2'
+version: '3.7'
 
 services:
+  binaries:
+    image: okteto/binaries:${DOCKER_TAG:-latest}
+    build:
+      context: .
+      dockerfile: binaries/Dockerfile
   desk:
+    image: okteto/desk:${DOCKER_TAG:-latest}
     build:
       context: .
       dockerfile: desk/Dockerfile
-    image: okteto/desk:0.1.3
   golang:
+    image: okteto/golang:1
     build:
       context: .
       dockerfile: golang/Dockerfile
-    image: okteto/golang:1
   gradle:
+    image: okteto/gradle:5.1-jdk11
     build:
       context: .
       dockerfile: gradle/Dockerfile
-    image: okteto/gradle:5.1-jdk11
   node:
+    image: okteto/node:10
     build:
       context: .
       dockerfile: node/Dockerfile
-    image: okteto/node:10
   openfaas:
+    image: okteto/openfaas:golang
     build:
       context: .
       dockerfile: openfaas/Dockerfile
-    image: okteto/openfaas:golang
   python:
+    image: okteto/python:3
     build:
       context: .
       dockerfile: python/Dockerfile
-    image: okteto/python:3
   ruby:
+    image: okteto/ruby:2
     build:
       context: .
       dockerfile: ruby/Dockerfile
-    image: okteto/ruby:2
