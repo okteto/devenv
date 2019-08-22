@@ -26,9 +26,10 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-c
     chmod +x /usr/local/bin/kubectl && \
     curl https://get.okteto.com -sSfL | sh
 
-RUN apt-get clean
+RUN apt-get clean -y && apt-get autoremove -y
     
 # setup okteto message
+RUN rm /etc/update-motd.d/*
 COPY bashrc /root/.bashrc
 
 CMD ["bash"]
