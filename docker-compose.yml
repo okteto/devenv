@@ -1,11 +1,11 @@
 version: '3.7'
 
 services:
-  binaries:
-    image: okteto/binaries:${DOCKER_TAG:-latest}
+  bin:
+    image: okteto/bin:${DOCKER_TAG:-latest}
     build:
       context: .
-      dockerfile: binaries/Dockerfile
+      dockerfile: bin/Dockerfile
   desk:
     image: okteto/desk:${DOCKER_TAG:-latest}
     build:
