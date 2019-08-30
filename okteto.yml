@@ -1,0 +1,3 @@
+name: devenv
+image: okteto/desk:0.1.5
+command: ["bash"]
