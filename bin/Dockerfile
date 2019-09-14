@@ -1,5 +1,7 @@
 FROM docker:stable AS docker
 
+FROM okteto/remote:latest AS remote
+
 FROM alpine:latest
 
 RUN apk add --update \
@@ -25,6 +27,5 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN curl -L https://downloads.okteto.com/cli/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
-# install remote
-RUN curl -L https://downloads.okteto.com/remote/okteto-remote -o /usr/local/bin/okteto-remote
-RUN chmod +x /usr/local/bin/okteto-remote
+# install okteto-remote
+COPY --from=remote /usr/local/bin/okteto-remote /usr/local/bin/okteto-remote
