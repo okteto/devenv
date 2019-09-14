@@ -27,5 +27,5 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN curl -L https://downloads.okteto.com/cli/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
-# install okteto-remote
-COPY --from=remote /usr/local/bin/okteto-remote /usr/local/bin/okteto-remote
+# install remote
+COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
