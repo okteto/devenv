@@ -17,10 +17,15 @@ services:
       context: .
       dockerfile: golang/Dockerfile
   gradle:
-    image: okteto/gradle:5.1-jdk11
+    image: okteto/gradle:latest
     build:
       context: .
       dockerfile: gradle/Dockerfile
+  maven:
+    image: okteto/maven:latest
+    build:
+      context: .
+      dockerfile: maven/Dockerfile
   node:
     image: okteto/node:10
     build:
