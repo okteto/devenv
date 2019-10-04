@@ -1,5 +1,4 @@
-FROM gradle:5.1-jdk11
-WORKDIR /home/gradle
+FROM gradle
 
 # setup okteto message
 COPY bashrc /home/gradle/.bashrc
