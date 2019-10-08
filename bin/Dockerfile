@@ -1,5 +1,5 @@
 FROM docker:stable AS docker
-
+FROM syncthing/syncthing:1.3.0 AS syncthing
 FROM okteto/remote:latest AS remote
 
 FROM alpine:latest
@@ -29,3 +29,16 @@ RUN chmod +x /usr/local/bin/okteto
 
 # install remote
 COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
+
+# install syncthing
+RUN mkdir -p /var/syncthing
+COPY --from=syncthing /bin/syncthing /usr/local/bin/syncthing
+
+# install helm3
+RUN wget https://get.helm.sh/helm-v3.0.0-beta.3-linux-amd64.tar.gz -O /tmp/helm-v3.0.0-beta.3-linux-amd64.tar.gz && \
+    tar -xvzf /tmp/helm-v3.0.0-beta.3-linux-amd64.tar.gz -C /tmp && \
+    mv /tmp/linux-amd64/helm /usr/local/bin/helm && \
+    rm -Rf /tmp/* && \
+    chmod +x /usr/local/bin/helm
+
+COPY bin/start.sh /usr/local/bin/start.sh
