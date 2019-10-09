@@ -10,9 +10,8 @@ RUN apt-get -y update && \
     add-apt-repository -y ppa:longsleep/golang-backports && \
     apt-get -y update && \
     apt-get install -y golang-go ruby-full nodejs yarn && \
-    gem install bundler
-
-RUN apt-get clean -y && apt-get autoremove -y
+    gem install bundler && \
+    apt-get clean -y && apt-get autoremove -y
     
 # setup okteto message
 RUN rm /etc/update-motd.d/*
