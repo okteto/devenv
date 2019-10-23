@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   bin:
-    image: okteto/bin:1.0.1
+    image: okteto/bin:1.0.2
     build:
       context: .
       dockerfile: bin/Dockerfile
