@@ -17,8 +17,8 @@ RUN curl -L https://downloads.okteto.com/cli/okteto-Linux-x86_64 -o /usr/local/b
 RUN chmod +x /usr/local/bin/okteto
 
 # install helm3
-RUN wget https://get.helm.sh/helm-v3.0.0-beta.4-linux-amd64.tar.gz -O /tmp/helm-v3.0.0-beta.4-linux-amd64.tar.gz && \
-    tar -xvzf /tmp/helm-v3.0.0-beta.4-linux-amd64.tar.gz -C /tmp && \
+RUN wget https://get.helm.sh/helm-v3.0.0-beta.5-linux-amd64.tar.gz -O /tmp/helm-v3.0.0-beta.5-linux-amd64.tar.gz && \
+    tar -xvzf /tmp/helm-v3.0.0-beta.5-linux-amd64.tar.gz -C /tmp && \
     mv /tmp/linux-amd64/helm /usr/local/bin/helm && \
     rm -Rf /tmp/* && \
     chmod +x /usr/local/bin/helm
