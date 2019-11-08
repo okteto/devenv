@@ -1,6 +1,7 @@
 FROM docker:stable AS docker
 FROM syncthing/syncthing:1.3.0 AS syncthing
 FROM okteto/remote:latest AS remote
+FROM okteto/helm-chart-manager:latest AS helm
 
 FROM alpine:latest as builder
 
@@ -16,13 +17,6 @@ RUN chmod +x /usr/local/bin/kubectl
 RUN curl -L https://downloads.okteto.com/cli/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
-# install helm3
-RUN wget https://get.helm.sh/helm-v3.0.0-beta.5-linux-amd64.tar.gz -O /tmp/helm-v3.0.0-beta.5-linux-amd64.tar.gz && \
-    tar -xvzf /tmp/helm-v3.0.0-beta.5-linux-amd64.tar.gz -C /tmp && \
-    mv /tmp/linux-amd64/helm /usr/local/bin/helm && \
-    rm -Rf /tmp/* && \
-    chmod +x /usr/local/bin/helm
-
 FROM busybox
 
 COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
@@ -30,7 +24,7 @@ COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
 COPY --from=syncthing /bin/syncthing /usr/local/bin/syncthing
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto
-COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
+COPY --from=helm /usr/local/bin/helm /usr/local/bin/helm
 
 # copy start
 COPY bin/start.sh /usr/local/bin/start.sh
