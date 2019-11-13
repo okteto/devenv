@@ -1,4 +1,3 @@
-FROM docker:stable AS docker
 FROM syncthing/syncthing:1.3.0 AS syncthing
 FROM okteto/remote:latest AS remote
 FROM okteto/helm-chart-manager:latest AS helm
@@ -14,12 +13,11 @@ RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 RUN chmod +x /usr/local/bin/kubectl
 
 # install okteto
-RUN curl -L https://downloads.okteto.com/cli/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.5.5/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
 FROM busybox
 
-COPY --from=docker /usr/local/bin/docker /usr/local/bin/docker
 COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
 COPY --from=syncthing /bin/syncthing /usr/local/bin/syncthing
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
