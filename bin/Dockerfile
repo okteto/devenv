@@ -13,7 +13,7 @@ RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 RUN chmod +x /usr/local/bin/kubectl
 
 # install okteto
-RUN curl -L https://github.com/okteto/okteto/releases/1.5.5/download/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.5.5/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
 FROM busybox
