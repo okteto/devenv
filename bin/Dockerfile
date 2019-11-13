@@ -11,12 +11,10 @@ RUN apk add --update \
 # install kubectl
 RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" -o /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
-RUN /usr/local/bin/kubectl version --client
 
 # install okteto
 RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.5.5/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
-RUN /usr/local/bin/okteto version
 
 FROM busybox
 
