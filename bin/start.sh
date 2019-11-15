@@ -10,4 +10,4 @@ echo "Copying configuration files to $syncthingHome ..."
 cp /var/syncthing/secret/* $syncthingHome
 
 echo "Executing syncthing..." 
-/var/okteto/bin/syncthing -home $syncthingHome -gui-address 0.0.0.0:8384
+/var/okteto/bin/syncthing -home $syncthingHome -gui-address 0.0.0.0:8384 -verbose
