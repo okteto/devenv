@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   bin:
-    image: okteto/bin:1.0.6
+    image: okteto/bin:1.0.7
     build:
       context: .
       dockerfile: bin/Dockerfile
@@ -46,3 +46,8 @@ services:
     build:
       context: .
       dockerfile: ruby/Dockerfile
+  php:
+    image: okteto/php:7
+    build:
+      context: .
+      dockerfile: php/Dockerfile
