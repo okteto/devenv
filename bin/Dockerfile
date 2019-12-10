@@ -1,5 +1,5 @@
 FROM syncthing/syncthing:1.3.0 AS syncthing
-FROM okteto/remote:0.2.0 AS remote
+FROM okteto/remote:0.2.1 AS remote
 
 FROM alpine:latest as builder
 
@@ -16,8 +16,8 @@ RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.5.8/okteto-Li
 RUN chmod +x /usr/local/bin/okteto
 
 # install helm
-RUN curl -L https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz -o /tmp/helm-v3.0.0-linux-amd64.tar.gz
-RUN tar -xvzf /tmp/helm-v3.0.0-linux-amd64.tar.gz -C /tmp
+RUN curl -L https://get.helm.sh/helm-v3.0.1-linux-amd64.tar.gz -o /tmp/helm-v3.0.1-linux-amd64.tar.gz
+RUN tar -xvzf /tmp/helm-v3.0.1-linux-amd64.tar.gz -C /tmp
 RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
 RUN chmod +x /usr/local/bin/helm
 
