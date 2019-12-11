@@ -1,5 +1,5 @@
 FROM syncthing/syncthing:1.3.0 AS syncthing
-FROM okteto/remote:0.2.1 AS remote
+FROM okteto/remote:0.2.2 AS remote
 
 FROM alpine:latest as builder
 
