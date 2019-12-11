@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -e
 remote=0
 while getopts ":r" opt; do
   case $opt in
