@@ -1,5 +1,7 @@
-FROM syncthing/syncthing:1.3.0 AS syncthing
+FROM syncthing/syncthing:1.3.2 AS syncthing
+
 FROM okteto/remote:0.2.2 AS remote
+FROM okteto/supervisor:0.1.0 AS supervisor
 
 FROM alpine:latest as builder
 
@@ -29,6 +31,7 @@ RUN okteto version
 FROM busybox
 
 COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
+COPY --from=supervisor /usr/local/bin/supervisor /usr/local/bin/supervisor
 COPY --from=syncthing /bin/syncthing /usr/local/bin/syncthing
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto

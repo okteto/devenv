@@ -23,8 +23,8 @@ cp /var/syncthing/secret/* $syncthingHome
 
 params=""
 if [ $remote -eq 1 ]; then
-params="--with-remote"
+params="--remote"
 fi
 
-echo "Executing syncthing..." 
-exec /var/okteto/bin/monitor $params
+echo "Executing supervisor..." 
+exec /var/okteto/bin/supervisor $params
