@@ -21,11 +21,10 @@ syncthingHome=/var/syncthing
 echo "Copying configuration files to $syncthingHome ..."
 cp /var/syncthing/secret/* $syncthingHome
 
+params=""
 if [ $remote -eq 1 ]; then
-echo "Executing remote..." 
-/var/okteto/bin/remote &
+params="--with-remote"
 fi
 
 echo "Executing syncthing..." 
-/var/okteto/bin/syncthing -home $syncthingHome -gui-address 0.0.0.0:8384 -verbose
-
+exec /var/okteto/bin/monitor $params
