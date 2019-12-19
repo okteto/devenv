@@ -3,7 +3,7 @@ WORKDIR /okteto
 
 RUN apt-get update && apt-get install -y zip git libzip-dev && \ 
   pecl install xdebug && echo 'zend_extension="xdebug.so"' > /usr/local/etc/php/conf.d/xdebug.ini && \
-  pecl install zip && \
+  pecl install zip && echo 'extension=zip.so' > /usr/local/etc/php/conf.d/zip.ini && \
   php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php --install-dir /usr/local/bin && \ 
   ln -s /usr/local/bin/composer.phar /usr/local/bin/composer && \
