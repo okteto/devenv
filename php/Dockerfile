@@ -1,15 +1,19 @@
 FROM php:7
 WORKDIR /okteto
 
-RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
-  php -r "if (hash_file('sha384', 'composer-setup.php') === 'a5c698ffe4b8e849a443b120cd5ba38043260d5c4023dbf93e1558871f1f07f58274fc6f4c93bcfd858c6bd0775cd8d1') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;" && \
+RUN apt-get update && apt-get install -y zip git libzip-dev && \ 
+  pecl install xdebug && echo 'zend_extension="xdebug.so"' > /usr/local/etc/php/conf.d/xdebug.ini && \
+  pecl install zip && echo 'extension=zip.so' > /usr/local/etc/php/conf.d/zip.ini && \
+  php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
   php composer-setup.php --install-dir /usr/local/bin && \ 
   ln -s /usr/local/bin/composer.phar /usr/local/bin/composer && \
-  php -r "unlink('composer-setup.php');" && \
-  pecl install xdebug && echo 'zend_extension="xdebug.so"' > /usr/local/etc/php/conf.d/xdebug.ini && \
-  apt-get update && apt-get install -y zip git
+  unlink composer-setup.php && \
+  /usr/local/bin/composer global require laravel/installer
+
+COPY php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # setup okteto message
 COPY bashrc /root/.bashrc
 
+ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.composer/vendor/bin/:/okteto/vendor/bin/
 CMD ["bash"]
