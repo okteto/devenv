@@ -19,7 +19,7 @@ touch $OKTETO_MARKER_PATH
 
 syncthingHome=/var/syncthing
 echo "Copying configuration files to $syncthingHome ..."
-cp /var/syncthing/secret/* $syncthingHome
+cp /var/okteto/secrets/syncthing/* $syncthingHome
 
 params=""
 if [ $remote -eq 1 ]; then
