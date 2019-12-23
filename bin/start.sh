@@ -2,10 +2,18 @@
 
 set -e
 remote=0
-while getopts ":r" opt; do
+while getopts ":s:r" opt; do
   case $opt in
     r)
       remote=1
+      ;;
+    s)
+      sourceFILE="$(echo $OPTARG | cut -d':' -f1)"
+      destFILE="$(echo $OPTARG | cut -d':' -f2)"
+      dirName="$(dirname $destFILE)"
+      mkdir -p $dirName
+      echo "Copying secret $sourceFILE to $destFILE"
+      cp -p /var/okteto/secret/$sourceFILE $destFILE
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
