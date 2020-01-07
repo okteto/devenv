@@ -1,4 +1,4 @@
-FROM syncthing/syncthing:1.3.2 AS syncthing
+FROM syncthing/syncthing:1.3.3 AS syncthing
 
 FROM okteto/remote:0.2.2 AS remote
 FROM okteto/supervisor:0.1.0 AS supervisor
@@ -14,7 +14,7 @@ RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s
 RUN chmod +x /usr/local/bin/kubectl
 
 # install okteto
-RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.5.8/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.6.3/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
 # install helm
