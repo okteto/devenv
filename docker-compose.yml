@@ -26,6 +26,11 @@ services:
     build:
       context: .
       dockerfile: maven/Dockerfile
+  grails:
+    image: okteto/grails:latest
+    build:
+      context: .
+      dockerfile: grails/Dockerfile
   node:
     image: okteto/node:10
     build:
