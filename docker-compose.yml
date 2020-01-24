@@ -5,6 +5,13 @@ services:
     image: okteto/bin:1.1.2
     build:
       context: .
+      target: opensource
+      dockerfile: bin/Dockerfile
+  bin-cloud:
+    image: okteto/bin:1.1.2-cloud
+    build:
+      context: .
+      target: cloud
       dockerfile: bin/Dockerfile
   desk:
     image: okteto/desk:${DOCKER_TAG:-latest}

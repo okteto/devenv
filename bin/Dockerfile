@@ -28,14 +28,17 @@ RUN helm version
 RUN kubectl version --client
 RUN okteto version
 
-FROM busybox
+FROM busybox as opensource
 
 COPY --from=remote /usr/local/bin/remote /usr/local/bin/remote
 COPY --from=supervisor /usr/local/bin/supervisor /usr/local/bin/supervisor
 COPY --from=syncthing /bin/syncthing /usr/local/bin/syncthing
-COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
-COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto
-COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
 
 # copy start
 COPY bin/start.sh /usr/local/bin/start.sh
+
+FROM opensource as cloud
+
+COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto
+COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
