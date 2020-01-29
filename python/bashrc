@@ -1,0 +1,19 @@
+VIRTUAL_ENV_PATH=$(pwd)/venv
+
+if (tty -s); then
+    if [ ! -f "$VIRTUAL_ENV_PATH/bin/python" ]; then
+    # copy pre-created virtualenv and adjust the path
+    cp -r /opt/okteto/venv $VIRTUAL_ENV_PATH
+    sed -i '43s/.*/VIRTUAL_ENV="$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}" )")" \&\& pwd)"/' $VIRTUAL_ENV_PATH/bin/activate
+    sed -i '1s/.*/#!\/usr\/bin\/env python/' $VIRTUAL_ENV_PATH/bin/pip*
+    fi
+fi
+
+VIRTUAL_ENV=$VIRTUAL_ENV_PATH
+export PATH=$VIRTUAL_ENV_PATH/bin:$PATH
+
+cat << EOF
+Welcome to your development environment. Happy coding!
+EOF
+
+export PS1="\[\e[32m\]okteto\[\e[m\]> "
