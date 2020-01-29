@@ -2,13 +2,13 @@ version: '3.7'
 
 services:
   bin:
-    image: okteto/bin:1.1.2
+    image: okteto/bin:1.1.3
     build:
       context: .
       target: opensource
       dockerfile: bin/Dockerfile
   bin-cloud:
-    image: okteto/bin:1.1.2-cloud
+    image: okteto/bin:1.1.3-cloud
     build:
       context: .
       target: cloud
