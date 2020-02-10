@@ -17,6 +17,7 @@ jobs:
       - image: okteto/golang-ci:1.13
     steps:
       - checkout
+      - setup_remote_docker
       - run: 
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
