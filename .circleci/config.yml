@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.13
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: 
+          name: docker login
+          command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
+      - run: 
+          name: build images
+          command: make build
+  push:
+    docker:
+      - image: okteto/golang-ci:1.13
+    steps:
+      - checkout
+      - run: 
+          name: docker login
+          command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
+      - run: 
+          name: build images
+          command: make build
+      - run: 
+          name: push images
+          command: make push
