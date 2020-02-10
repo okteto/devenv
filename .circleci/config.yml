@@ -26,3 +26,13 @@ jobs:
       - run: 
           name: push images
           command: make push
+workflows:
+  version: 2
+  ci-cd:
+    jobs:
+      - build
+      - push:
+          filters:
+            branches:
+              only:
+                - master
