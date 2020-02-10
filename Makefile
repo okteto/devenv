@@ -1,9 +1,9 @@
-.PHONY build push
+.PHONY: build push
 
-.build:
+build: 
 	docker-compose build
 
-.push:
+push:
 	docker-compose push bin
 	docker-compose push bin-cloud
 	docker-compose push desk
