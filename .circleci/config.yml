@@ -29,9 +29,15 @@ jobs:
           command: make push
 workflows:
   version: 2
-  ci-cd:
+  build:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              ignore:
+                - master
+  push:
+    jobs:
       - push:
           filters:
             branches:

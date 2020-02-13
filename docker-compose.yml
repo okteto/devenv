@@ -2,22 +2,17 @@ version: '3.7'
 
 services:
   bin:
-    image: okteto/bin:1.1.4
+    image: okteto/bin:1.1.5
     build:
       context: .
       target: opensource
       dockerfile: bin/Dockerfile
   bin-cloud:
-    image: okteto/bin:1.1.4-cloud
+    image: okteto/bin:1.1.5-cloud
     build:
       context: .
       target: cloud
       dockerfile: bin/Dockerfile
-  desk:
-    image: okteto/desk:${DOCKER_TAG:-latest}
-    build:
-      context: .
-      dockerfile: desk/Dockerfile
   golang:
     image: okteto/golang:1
     build:
