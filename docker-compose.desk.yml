@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+ desk:
+    image: okteto/desk:${DOCKER_TAG:-latest}
+    build:
+      context: .
+      dockerfile: desk/Dockerfile
