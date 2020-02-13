@@ -13,11 +13,6 @@ services:
       context: .
       target: cloud
       dockerfile: bin/Dockerfile
-  desk:
-    image: okteto/desk:${DOCKER_TAG:-latest}
-    build:
-      context: .
-      dockerfile: desk/Dockerfile
   golang:
     image: okteto/golang:1
     build:
