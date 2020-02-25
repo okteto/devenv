@@ -13,6 +13,11 @@ services:
       context: .
       target: cloud
       dockerfile: bin/Dockerfile
+  dotnetcore:
+    image: okteto/dotnetcore:3
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
   golang:
     image: okteto/golang:1
     build:
