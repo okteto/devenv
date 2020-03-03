@@ -1,4 +1,4 @@
-FROM golang:1.13
+FROM golang:1.14
 WORKDIR /app
 # setup okteto message
 COPY bashrc /root/.bashrc
