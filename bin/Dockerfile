@@ -1,6 +1,6 @@
 FROM syncthing/syncthing:1.3.4 AS syncthing
 
-FROM okteto/remote:0.2.3 AS remote
+FROM okteto/remote:0.2.4 AS remote
 FROM okteto/supervisor:0.1.0 AS supervisor
 
 FROM alpine:latest as builder
@@ -13,15 +13,15 @@ RUN apk add --update \
 RUN curl -L "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" -o /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl
 
-# install okteto
-RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.7.4/okteto-Linux-x86_64 -o /usr/local/bin/okteto
-RUN chmod +x /usr/local/bin/okteto
-
 # install helm
 RUN curl -L https://get.helm.sh/helm-v3.1.1-linux-amd64.tar.gz -o /tmp/helm.tar.gz
 RUN tar -xvzf /tmp/helm.tar.gz -C /tmp
 RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
 RUN chmod +x /usr/local/bin/helm
+
+# install okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.7.5/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN chmod +x /usr/local/bin/okteto
 
 # Test
 RUN helm version
