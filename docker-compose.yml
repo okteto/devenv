@@ -14,7 +14,7 @@ services:
       target: opensource
       dockerfile: bin/Dockerfile
   bin-cloud:
-    image: okteto/bin:1.1.110-cloud
+    image: okteto/bin:1.1.10-cloud
     build:
       context: .
       target: cloud
