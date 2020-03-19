@@ -1,6 +1,12 @@
 version: '3.7'
 
 services:
+  okteto:
+    image: okteto/okteto:1.8.1
+    build:
+      context: .
+      target: okteto
+      dockerfile: bin/Dockerfile
   bin:
     image: okteto/bin:1.1.10
     build:
@@ -8,7 +14,7 @@ services:
       target: opensource
       dockerfile: bin/Dockerfile
   bin-cloud:
-    image: okteto/bin:1.1.10-cloud
+    image: okteto/bin:1.1.110-cloud
     build:
       context: .
       target: cloud
