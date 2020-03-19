@@ -42,3 +42,10 @@ FROM opensource as cloud
 COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
 COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto
 COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
+
+FROM alpine:3 as okteto
+
+RUN apk add --no-cache ca-certificates
+COPY --from=builder /usr/local/bin/kubectl /usr/local/bin/kubectl
+COPY --from=builder /usr/local/bin/okteto /usr/local/bin/okteto
+COPY --from=builder /usr/local/bin/helm /usr/local/bin/helm
