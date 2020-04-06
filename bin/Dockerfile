@@ -1,6 +1,6 @@
 FROM syncthing/syncthing:1.4.0 AS syncthing
 
-FROM okteto/remote:0.2.4 AS remote
+FROM okteto/remote:0.2.5 AS remote
 FROM okteto/supervisor:0.1.0 AS supervisor
 
 FROM alpine:latest as builder
@@ -20,7 +20,7 @@ RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
 RUN chmod +x /usr/local/bin/helm
 
 # install okteto
-RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.8.1/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.8.2/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
 # Test
