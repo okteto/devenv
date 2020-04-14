@@ -23,6 +23,7 @@ while getopts ":s:r" opt; do
 done
 
 echo "Creating marker file $OKTETO_MARKER_PATH ..."
+mkdir -p "$(dirname "$OKTETO_MARKER_PATH")"
 touch $OKTETO_MARKER_PATH
 
 syncthingHome=/var/syncthing
