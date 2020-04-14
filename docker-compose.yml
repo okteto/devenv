@@ -40,7 +40,7 @@ services:
       context: .
       dockerfile: maven/Dockerfile
   node:
-    image: okteto/node:10
+    image: okteto/node:12
     build:
       context: .
       dockerfile: node/Dockerfile
