@@ -20,7 +20,7 @@ RUN mv /tmp/linux-amd64/helm /usr/local/bin/helm
 RUN chmod +x /usr/local/bin/helm
 
 # install okteto
-RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.8.2/okteto-Linux-x86_64 -o /usr/local/bin/okteto
+RUN curl -fSL https://github.com/okteto/okteto/releases/download/1.8.3/okteto-Linux-x86_64 -o /usr/local/bin/okteto
 RUN chmod +x /usr/local/bin/okteto
 
 # Test
