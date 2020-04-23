@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -d "/var/okteto/bin" ]; then
+  cp /var/okteto/bin/* /usr/local/bin
+fi
+
 set -e
 remote=0
 while getopts ":s:r" opt; do
