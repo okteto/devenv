@@ -1,5 +1,7 @@
 #!/bin/sh
 
+userID="$(id -u)"
+echo "USER:$userID"
 if [ -d "/var/okteto/bin" ]; then
   cp /var/okteto/bin/* /usr/local/bin
 fi

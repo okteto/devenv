@@ -8,13 +8,13 @@ services:
       target: okteto
       dockerfile: bin/Dockerfile
   bin:
-    image: okteto/bin:1.1.16
+    image: okteto/bin:1.1.17
     build:
       context: .
       target: opensource
       dockerfile: bin/Dockerfile
   bin-cloud:
-    image: okteto/bin:1.1.16-cloud
+    image: okteto/bin:1.1.17-cloud
     build:
       context: .
       target: cloud
