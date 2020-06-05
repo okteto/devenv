@@ -1,5 +1,9 @@
 # The name tells Okteto to replace the function named 'hello' with the dev environment
+<<<<<<< HEAD
 name: deno-hello       
+=======
+name: deno-hello
+>>>>>>> added sample okteto.yml
 labels:
   faas_function: deno-hello
 image: austinrivas/deno-http-okteto:stable
