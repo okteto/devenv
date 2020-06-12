@@ -12,12 +12,12 @@ services:
       context: .
       dockerfile: golang/Dockerfile
   gradle:
-    image: okteto/gradle:latest
+    image: okteto/gradle:6.5
     build:
       context: .
       dockerfile: gradle/Dockerfile
   maven:
-    image: okteto/maven:latest
+    image: okteto/maven:3-openjdk
     build:
       context: .
       dockerfile: maven/Dockerfile
@@ -27,10 +27,9 @@ services:
       context: .
       dockerfile: node/Dockerfile
   openfaas:
-    image: okteto/openfaas:golang
+    image: okteto/openfaas-golang-http
     build:
-      context: .
-      dockerfile: openfaas/Dockerfile
+      context: openfaas/golang-http-template
   python:
     image: okteto/python:3
     build:

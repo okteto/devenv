@@ -1,4 +1,4 @@
-FROM openfaas/of-watchdog:0.7.2 as watchdog
+FROM openfaas/of-watchdog:0.7.7 as watchdog
 
 FROM okteto/golang:1
 
@@ -10,14 +10,13 @@ RUN chmod +x /usr/bin/fwatchdog && \
     echo 'Welcome to your development environment. Happy coding!' > /etc/mod && \
     echo 'export PS1="\[\e[32m\]okteto\[\e[m\]> "' >> /home/app/.bashrc
 
-COPY scripts/* /usr/local/bin/
 USER app
 
-RUN mkdir -p /home/app/handler/function
-WORKDIR /home/app/handler
+RUN mkdir -p /home/app/function
+WORKDIR /home/app
 
-ADD --chown=app:app https://raw.githubusercontent.com/openfaas-incubator/golang-http-template/master/template/golang-middleware/main.go /home/app/handler/
-ADD --chown=app:app https://raw.githubusercontent.com/openfaas-incubator/golang-http-template/master/template/golang-middleware/go.mod /home/app/handler/
+ADD --chown=app:app https://raw.githubusercontent.com/openfaas-incubator/golang-http-template/689ef46202a782b19815028ed3915f0886ed5771/template/golang-middleware/main.go /home/app
+ADD --chown=app:app https://raw.githubusercontent.com/openfaas-incubator/golang-http-template/689ef46202a782b19815028ed3915f0886ed5771/template/golang-middleware/go.mod /home/app
 
 ENV fprocess="./handler"
 ENV mode="http"
