@@ -1,4 +1,4 @@
-name: devenv
-image: okteto/desk:latest
+name: dev
+image: okteto/dev:latest
 command:
 - bash

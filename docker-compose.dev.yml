@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+ dev:
+    image: okteto/dev:${DOCKER_TAG:-latest}
+    build:
+      context: .
+      dockerfile: dev/Dockerfile
