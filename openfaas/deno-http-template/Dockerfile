@@ -4,7 +4,7 @@ WORKDIR ${FUNC_HOME_DIR}
 
 RUN chown fnUser:fnGroup -R /usr/local \
     && apk --no-cache add bash \
-    && echo 'Welcome to your development environment. Happy coding!' > /etc/mod \
+    && echo 'Welcome to your development container. Happy coding!' > /etc/mod \
     && echo 'export PS1="\[\e[32m\]okteto\[\e[m\]> "' >> .bashrc
 
 USER fnUser

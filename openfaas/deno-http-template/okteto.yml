@@ -1,4 +1,4 @@
-# The name tells Okteto to replace the function named 'hello' with the dev environment
+# The name tells Okteto to replace the function named 'hello' with the dev container
 name: deno-hello       
 labels:
   faas_function: deno-hello
@@ -10,7 +10,7 @@ mountpath: /home/app/function
 persistentVolume:
   enabled: true
 volumes:
-  # This makes the deno cache persistent across development environments
+  # This makes the deno cache persistent across development containers
   - /home/app/.cache/
 securityContext:
   # the user and group that OpenFaaS functions run as
