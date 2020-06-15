@@ -7,7 +7,7 @@ COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog && \
     addgroup --gid 12000 app && \
     adduser --home /home/app --uid 12000 --gid 12000 app && \
-    echo 'Welcome to your development environment. Happy coding!' > /etc/mod && \
+    echo 'Welcome to your development container. Happy coding!' > /etc/mod && \
     echo 'export PS1="\[\e[32m\]okteto\[\e[m\]> "' >> /home/app/.bashrc
 
 USER app
