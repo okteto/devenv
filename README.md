@@ -14,9 +14,11 @@ The development containers on this list are maintained by the Okteto team to hel
 | jdk 8, Gradle 6.5  | [okteto/gradle:6.5](gradle/Dockerfile)|
 | jdk 11, Maven 3    | [okteto/maven:3-openjdk](maven/Dockerfile)|
 | node 10           | [okteto/node:10](node/Dockerfile)|
+| php 7      | [okteto/php:7](php/Dockerfile)|
 | python 3      | [okteto/python:3](python/Dockerfile)|
 | ruby 2      | [okteto/ruby:2](ruby/Dockerfile)|
-| php 7      | [okteto/php:7](php/Dockerfile)|
+| rust      | [okteto/rust](rust/Dockerfile)|
+
 
 ## OpenFaaS 
 | Language | Template    | Docker Image |
