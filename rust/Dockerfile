@@ -10,6 +10,7 @@ RUN curl https://github.com/engineerd/wasm-to-oci/releases/download/v0.1.1/linux
     cargo install nkeys --features "cli" && \
     cargo install wascap --features "cli" && \
     cargo install wasm-pack && \
-    cargo install just
+    cargo install just && \
+    rustup target add wasm32-unknown-unknown
 
 CMD ["bash"]
