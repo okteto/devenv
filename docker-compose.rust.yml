@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+ rust:
+    image: okteto/rust:1
+    build:
+      context: .
+      dockerfile: rust/Dockerfile

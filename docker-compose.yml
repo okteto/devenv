@@ -45,8 +45,3 @@ services:
     build:
       context: .
       dockerfile: php/Dockerfile
-  rust:
-    image: okteto/rust:1
-    build:
-      context: .
-      dockerfile: rust/Dockerfile
