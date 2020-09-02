@@ -3,15 +3,11 @@ name: deno-hello
 labels:
   faas_function: deno-hello
 image: austinrivas/deno-http-okteto:stable
-command:
-  - bash
+environment:
+  # overrides the one set by openfaas, enabling hot reload
+  - fprocess=deno run --allow-net --allow-env main.ts
 workdir: /home/app
-mountpath: /home/app/function
-persistentVolume:
-  enabled: true
-volumes:
-  # This makes the deno cache persistent across development containers
-  - /home/app/.cache/
+command: bash
 securityContext:
   # the user and group that OpenFaaS functions run as
   runAsUser:  12000
@@ -21,9 +17,11 @@ securityContext:
     add:
     # enables us to run the debugger inside the pod
     - SYS_PTRACE
-environment:
-  # overrides the one set by openfaas, enabling hot reload
-  - fprocess=deno run --allow-net --allow-env main.ts
+volumes:
+  # This makes the deno cache persistent across development containers
+  - /home/app/.cache/
+sync:
+  - .:/home/app/function
 forward:
   - 8080:8080
   - 2345:2345
