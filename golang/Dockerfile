@@ -1,4 +1,4 @@
-FROM golang:1.14
+FROM golang:1.15-buster
 WORKDIR /app
 # setup okteto message
 COPY bashrc /root/.bashrc

@@ -40,6 +40,11 @@ services:
     build:
       context: .
       dockerfile: ruby/Dockerfile
+  rust:
+    image: okteto/rust:1
+    build:
+      context: .
+      dockerfile: rust/Dockerfile
   php:
     image: okteto/php:7
     build:
