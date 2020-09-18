@@ -1,8 +1,10 @@
 FROM node:12
 
-RUN npm install -g nodemon
+WORKDIR /app
 
 # setup okteto message
 COPY bashrc /root/.bashrc
+
+RUN npm install -g nodemon
 
 CMD ["bash"]
