@@ -1,5 +1,7 @@
 FROM rust:1
 
+WORKDIR /src
+
 # setup okteto message
 COPY bashrc /root/.bashrc
 
