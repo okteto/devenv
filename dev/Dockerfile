@@ -1,5 +1,10 @@
 FROM ubuntu:18.04
 
+WORKDIR /usr/src/app
+
+# setup okteto message
+COPY bashrc /root/.bashrc
+
 # add keys and install golang, ruby and nodejs
 RUN apt-get -y update && \
     apt-get install -y curl && \
@@ -13,8 +18,6 @@ RUN apt-get -y update && \
     gem install bundler && \
     apt-get clean -y && apt-get autoremove -y
     
-# setup okteto message
 RUN rm /etc/update-motd.d/*
-COPY bashrc /root/.bashrc
 
 CMD ["bash"]

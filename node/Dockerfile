@@ -1,6 +1,6 @@
 FROM node:12
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc
