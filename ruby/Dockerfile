@@ -1,6 +1,6 @@
 FROM ruby:2
 
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc

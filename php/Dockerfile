@@ -1,6 +1,6 @@
 FROM php:7
 
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc

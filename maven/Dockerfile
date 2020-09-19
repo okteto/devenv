@@ -1,6 +1,6 @@
 FROM maven:3-openjdk
 
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc

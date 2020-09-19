@@ -5,7 +5,7 @@ RUN curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /root/
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 
-WORKDIR /src
+WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc
