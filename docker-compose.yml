@@ -30,6 +30,11 @@ services:
     image: okteto/openfaas-golang-http
     build:
       context: openfaas/golang-http-template
+  php:
+    image: okteto/php:7
+    build:
+      context: .
+      dockerfile: php/Dockerfile
   python:
     image: okteto/python:3
     build:
@@ -40,13 +45,3 @@ services:
     build:
       context: .
       dockerfile: ruby/Dockerfile
-  rust:
-    image: okteto/rust:1
-    build:
-      context: .
-      dockerfile: rust/Dockerfile
-  php:
-    image: okteto/php:7
-    build:
-      context: .
-      dockerfile: php/Dockerfile
