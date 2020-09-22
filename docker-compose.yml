@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: gradle/Dockerfile
   maven:
-    image: okteto/maven:3-openjdk
+    image: okteto/maven:3
     build:
       context: .
       dockerfile: maven/Dockerfile
