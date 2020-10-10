@@ -7,4 +7,8 @@ COPY bashrc /root/.bashrc
 
 RUN apt-get update && apt-get install -y zip git
 
+RUN pip install --upgrade pip
+
+ENV FLASK_ENV=development
+
 CMD ["bash"]
