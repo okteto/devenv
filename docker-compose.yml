@@ -6,11 +6,20 @@ services:
     build:
       context: .
       dockerfile: dotnetcore/Dockerfile
-  golang:
+  golang1.15:
     image: okteto/golang:1
     build:
       context: .
       dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.15
+  golang1.14:
+    image: okteto/golang:1.14
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.14
   gradle:
     image: okteto/gradle:6.5
     build:
@@ -21,11 +30,27 @@ services:
     build:
       context: .
       dockerfile: maven/Dockerfile
-  node:
+  node12:
     image: okteto/node:12
     build:
       context: .
       dockerfile: node/Dockerfile
+    environment:
+      VERSION: 12
+  node11:
+    image: okteto/node:11
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 11
+  node10:
+    image: okteto/node:10
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 10
   openfaas:
     image: okteto/openfaas-golang-http
     build:
@@ -35,11 +60,20 @@ services:
     build:
       context: .
       dockerfile: php/Dockerfile
-  python:
+  python3:
     image: okteto/python:3
     build:
       context: .
       dockerfile: python/Dockerfile
+      args:
+        VERSION: 3
+  python2:
+    image: okteto/python:2
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+      args:
+        VERSION: 2
   ruby:
     image: okteto/ruby:2
     build:

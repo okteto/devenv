@@ -1,4 +1,5 @@
-FROM php:7
+ARG VERSION=7
+FROM php:$VERSION
 
 WORKDIR /usr/src/app
 
