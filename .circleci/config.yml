@@ -35,11 +35,11 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - main
   push:
     jobs:
       - push:
           filters:
             branches:
               only:
-                - master
+                - main
