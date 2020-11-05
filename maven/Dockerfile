@@ -1,4 +1,5 @@
-FROM maven:3-openjdk
+ARG VERSION=3
+FROM maven:${VERSION}-openjdk
 
 WORKDIR /usr/src/app
 

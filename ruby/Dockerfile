@@ -1,4 +1,5 @@
-FROM ruby:2
+ARG VERSION=2
+FROM ruby:$VERSION
 
 WORKDIR /usr/src/app
 

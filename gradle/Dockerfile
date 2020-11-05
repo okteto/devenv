@@ -1,4 +1,5 @@
-FROM gradle:6.5
+ARG VERSION=6.5
+FROM gradle:$VERSION
 
 WORKDIR /usr/src/app
 

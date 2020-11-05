@@ -1,4 +1,5 @@
-FROM python:3
+ARG VERSION=3
+FROM python:$VERSION
 
 WORKDIR /usr/src/app
 

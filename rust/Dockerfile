@@ -1,4 +1,5 @@
-FROM rust:1
+ARG VERSION=1
+FROM rust:$VERSION
 
 WORKDIR /usr/src/app
 
