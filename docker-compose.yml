@@ -6,8 +6,22 @@ services:
     build:
       context: .
       dockerfile: dotnetcore/Dockerfile
-  golang1.15:
+  golang1:
     image: okteto/golang:1
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.16
+  golang1.16:
+    image: okteto/golang:1.16
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.16
+  golang1.15:
+    image: okteto/golang:1.15
     build:
       context: .
       dockerfile: golang/Dockerfile
