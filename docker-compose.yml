@@ -44,6 +44,13 @@ services:
     build:
       context: .
       dockerfile: maven/Dockerfile
+  node14:
+    image: okteto/node:14
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+    environment:
+      VERSION: 14
   node12:
     image: okteto/node:12
     build:
