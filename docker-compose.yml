@@ -49,15 +49,15 @@ services:
     build:
       context: .
       dockerfile: node/Dockerfile
-    environment:
-      VERSION: 14
+      args:
+        VERSION: 14
   node12:
     image: okteto/node:12
     build:
       context: .
       dockerfile: node/Dockerfile
-    environment:
-      VERSION: 12
+      args:
+        VERSION: 12
   node11:
     image: okteto/node:11
     build:
