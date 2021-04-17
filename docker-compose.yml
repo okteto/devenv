@@ -72,6 +72,13 @@ services:
       dockerfile: node/Dockerfile
       args:
         VERSION: 10
+  deno19:
+    image: okteto/deno:1.9
+    build:
+      context: .
+      dockerfile: deno/Dockerfile
+      args:
+        DENO_VERSION: 1.9.0
   openfaas:
     image: okteto/openfaas-golang-http
     build:
