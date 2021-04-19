@@ -26,3 +26,5 @@ WORKDIR /usr/src/app
 
 # setup okteto message
 COPY bashrc /root/.bashrc
+
+RUN deno install -qAf --unstable https://deno.land/x/denon/denon.ts
