@@ -5,7 +5,8 @@ jobs:
       - image: okteto/golang-ci:1.17.3
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: "20.10.6"
       - run: 
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
@@ -17,7 +18,8 @@ jobs:
       - image: okteto/golang-ci:1.17.3
     steps:
       - checkout
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: "20.10.6"
       - run: 
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
