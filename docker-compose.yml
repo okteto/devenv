@@ -1,11 +1,20 @@
 version: '3.7'
 
 services:
-  dotnetcore:
+  dotnetcore3:
     image: okteto/dotnetcore:3
     build:
       context: .
       dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: 3.1
+  dotnetcore6:
+    image: okteto/dotnetcore:6
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: 6.0
   golang1:
     image: okteto/golang:1
     build:
