@@ -9,7 +9,7 @@ The development containers on this list are maintained by the Okteto team to hel
 ## General Use 
 | Language/Stack    | Docker Image |
 | ----------------- |------------- |
-| dotnetcore 3.1    | [okteto/dotnetcore:3](dotnetcore/Dockerfile)|
+| dotnetcore 6.0   | [okteto/dotnetcore:6](dotnetcore/Dockerfile)|
 | golang 1.15       | [okteto/golang:1](golang/Dockerfile)|
 | jdk 8, Gradle 6.5  | [okteto/gradle:6.5](gradle/Dockerfile)|
 | jdk 11, Maven 3    | [okteto/maven:3-openjdk](maven/Dockerfile)|
