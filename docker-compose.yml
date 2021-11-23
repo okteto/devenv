@@ -36,20 +36,6 @@ services:
       dockerfile: golang/Dockerfile
       args:
         VERSION: 1.16
-  golang1.15:
-    image: okteto/golang:1.15
-    build:
-      context: .
-      dockerfile: golang/Dockerfile
-      args:
-        VERSION: 1.15
-  golang1.14:
-    image: okteto/golang:1.14
-    build:
-      context: .
-      dockerfile: golang/Dockerfile
-      args:
-        VERSION: 1.14
   gradle:
     image: okteto/gradle:6.5
     build:
