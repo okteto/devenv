@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: okteto/golang-ci:1.17.11
+      - image: jdrouet/docker-with-buildx:stable
     steps:
       - checkout
       - setup_remote_docker:
@@ -13,7 +13,7 @@ jobs:
 
   push:
     docker:
-      - image: okteto/golang-ci:1.17.11
+      - image: jdrouet/docker-with-buildx:stable
     steps:
       - checkout
       - setup_remote_docker:
