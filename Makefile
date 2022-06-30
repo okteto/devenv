@@ -1,9 +1,6 @@
 .PHONY: build push
 
 build: 
-	docker-compose build --parallel
-
-push:
-	docker-compose push
+	docker buildx bake --push --set node*.platform=linux/amd64,linux/arm64`
 
 
