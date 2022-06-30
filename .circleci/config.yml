@@ -3,8 +3,6 @@ jobs:
   build:
     docker:
       - image: okteto/golang-ci:1.17.11
-    environment:
-      BUILDX_PLATFORMS: linux/amd64,linux/arm64
     steps:
       - checkout
       - setup_remote_docker:
@@ -14,13 +12,11 @@ jobs:
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
       - run:
           name: build images
-          command: docker context create build && docker buildx create build && make build
+          command: make build
 
   push:
     docker:
       - image: okteto/golang-ci:1.17.11
-    environment:
-      BUILDX_PLATFORMS: linux/amd64,linux/arm64
     steps:
       - checkout
       - setup_remote_docker:
@@ -30,7 +26,7 @@ jobs:
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
       - run:
           name: build & push images
-          command: docker context create build && docker buildx create build && make push
+          command: make push
 
 workflows:
   version: 2
