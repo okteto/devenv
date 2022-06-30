@@ -9,3 +9,4 @@ build:
 		--set ruby.platform=linux/amd64,linux/arm64 \
 		--set php.platform=linux/amd64,linux/arm64 \
 		--set maven.platform=linux/amd64,linux/arm64 \
+		--set dotnetcore*.platform=linux/amd64,linux/arm64 \
