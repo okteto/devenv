@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: okteto/golang-ci:1.17.11
+    environment:
+      BUILDX_PLATFORMS: linux/amd64,linux/arm64
     steps:
       - checkout
       - setup_remote_docker:
@@ -17,6 +19,8 @@ jobs:
   push:
     docker:
       - image: okteto/golang-ci:1.17.11
+    environment:
+      BUILDX_PLATFORMS: linux/amd64,linux/arm64
     steps:
       - checkout
       - setup_remote_docker:
