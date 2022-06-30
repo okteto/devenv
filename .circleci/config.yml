@@ -10,9 +10,9 @@ jobs:
       - run: 
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
-      - run: 
+      - run:
           name: build images
-          command: make build
+          command: docker context create build && docker buildx create build && make build
 
   push:
     docker:
@@ -24,9 +24,9 @@ jobs:
       - run: 
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
-      - run: 
+      - run:
           name: build & push images
-          command: make push
+          command: docker context create build && docker buildx create build && make push
 
 workflows:
   version: 2
