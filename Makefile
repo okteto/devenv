@@ -1,10 +1,7 @@
 .PHONY: build push
 
 build: 
-	docker buildx bake -f docker-compose.yml \
-		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose-without-arm.yml \
-		--set "*.platform=linux/amd64"
+	docker buildx bake -f docker-compose.yml
 
 push:
 	docker buildx bake -f docker-compose.yml \
