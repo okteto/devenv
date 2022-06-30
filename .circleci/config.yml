@@ -9,7 +9,7 @@ jobs:
           version: "20.10.11"
       - run:
           name: build images
-          command: make build
+          command: docker buildx bake -f docker-compose.yml --set "*.platform=linux/amd64,linux/arm64,linux/arm/v7"
 
   push:
     docker:
