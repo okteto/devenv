@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  dotnetcore3:
+    image: okteto/dotnetcore:3
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: "3.1"
+  dotnetcore6:
+    image: okteto/dotnetcore:6
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: "6.0"
+
+  gradle:
+    image: okteto/gradle:6.5
+    build:
+      context: .
+      dockerfile: gradle/Dockerfile
+
+  maven:
+    image: okteto/maven:3
+    build:
+      context: .
+      dockerfile: maven/Dockerfile
