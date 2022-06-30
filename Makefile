@@ -1,4 +1,4 @@
-.PHONY: build push
+.PHONY: build
 
 build: 
 	docker buildx bake -f docker-compose.yml \
