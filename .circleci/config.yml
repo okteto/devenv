@@ -24,11 +24,8 @@ jobs:
           name: docker login
           command: echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
       - run: 
-          name: build images
+          name: build & push images
           command: make build
-      - run: 
-          name: push images
-          command: make push
 workflows:
   version: 2
   build:
