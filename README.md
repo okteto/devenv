@@ -19,12 +19,6 @@ The development containers on this list are maintained by the Okteto team to hel
 | ruby 2      | [okteto/ruby:2](ruby/Dockerfile)|
 | rust      | [okteto/rust:1](rust/Dockerfile)|
 
-## OpenFaaS 
-| Language | Template    | Docker Image |
-| ---------|------- |------------- |
-| golang | http template      | [okteto/openfaas-golang-http](openfaas/golang-http-template)|
-| deno | http template      | [austinrivas/deno-http-okteto:stable](openfaas/deno-http-template)|
-
 # Contributions
 
 Are missing your favorite stack or language? Contributions are encouraged in the form of issues, feature requests, or PRs.
