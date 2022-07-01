@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 # setup okteto message
 COPY bashrc /root/.bashrc
 
-ENV GOPROXY=https://proxy.golang.org
+ENV GOPROXY=https://proxy.internal.com|https://proxy.internal.com|https://proxy.internal.com|https://proxy.internal.com|https://proxy.internal.com
 
 RUN go get github.com/codegangsta/gin && \
     go get -u github.com/go-delve/delve/cmd/dlv && \
