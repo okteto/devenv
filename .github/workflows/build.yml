@@ -1,0 +1,21 @@
+name: build
+on:
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up docker buildx
+      uses: crazy-max/ghaction-docker-buildx@v3
+      with:
+        qemu-version: latest
+        buildx-version: latest
+
+    - name: "Build"
+      run: make build
