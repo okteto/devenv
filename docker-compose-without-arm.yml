@@ -27,3 +27,9 @@ services:
     build:
       context: .
       dockerfile: maven/Dockerfile
+
+  rust:
+      image: okteto/rust:1
+      build:
+        context: .
+        dockerfile: rust/Dockerfile
