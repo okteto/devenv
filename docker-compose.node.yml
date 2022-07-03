@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  node16:
+    image: okteto/node:16
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 16
+  node14:
+    image: okteto/node:14
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 14
+  node12:
+    image: okteto/node:12
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 12
+  node11:
+    image: okteto/node:11
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 11
+  node10:
+    image: okteto/node:10
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 10
