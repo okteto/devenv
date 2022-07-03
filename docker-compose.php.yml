@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  php:
+    image: okteto/php:7
+    build:
+      context: .
+      dockerfile: php/Dockerfile

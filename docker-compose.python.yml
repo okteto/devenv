@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  python3:
+    image: okteto/python:3
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+      args:
+        VERSION: 3
+  python2:
+    image: okteto/python:2
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+      args:
+        VERSION: 2
