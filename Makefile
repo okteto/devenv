@@ -13,7 +13,7 @@ build:
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.ruby.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.rush.yml \
+	docker buildx bake -f docker-compose.rust.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose-without-arm.yml \
 		--set "*.platform=linux/amd64"
@@ -37,7 +37,7 @@ push:
 	docker buildx bake -f docker-compose.ruby.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.rush.yml \
+	docker buildx bake -f docker-compose.rust.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose-without-arm.yml \
