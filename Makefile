@@ -1,6 +1,8 @@
 .PHONY: build
 
 build: 
+	docker buildx bake -f docker-compose.dev.yml \
+		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.golang.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.node.yml \
@@ -10,11 +12,16 @@ build:
 	docker buildx bake -f docker-compose.python.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.ruby.yml \
+		--set "*.platform=linux/amd64,linux/arm64"
+	docker buildx bake -f docker-compose.rush.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose-without-arm.yml \
 		--set "*.platform=linux/amd64"
 
 push:
+	docker buildx bake -f docker-compose.dev.yml \
+		--push \
+		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.golang.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
@@ -28,6 +35,9 @@ push:
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.ruby.yml \
+		--push \
+		--set "*.platform=linux/amd64,linux/arm64"
+	docker buildx bake -f docker-compose.rush.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose-without-arm.yml \
