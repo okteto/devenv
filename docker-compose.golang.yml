@@ -7,7 +7,21 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: 1.17
+        VERSION: 1.19
+  golang1.19:
+    image: okteto/golang:1.19
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.19
+  golang1.18:
+    image: okteto/golang:1.18
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: 1.18
   golang1.17:
     image: okteto/golang:1.17
     build:
