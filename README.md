@@ -1,16 +1,16 @@
 # Development Containers for Okteto
 
-When you run `okteto up` the container running your application is replaced by a development container that contains your development tools (e.g. maven and jdk, or npm, python, go compiler, debuggers, etc). 
+When you run `okteto up` the container running your application is replaced by a development container that contains your development tools (e.g. maven and jdk, or npm, python, go compiler, debuggers, etc).
 
-The development container can be any docker image. More information about development containers, and how to build your own [is available here](https://okteto.com/docs/reference/development-environment/index.html). 
+The development container can be any docker image. More information about development containers, and how to build your own [is available here](https://okteto.com/docs/reference/development-environment/index.html).
 
 The development containers on this list are maintained by the Okteto team to help you get started:
 
-## General Use 
+## General Use
 | Language/Stack    | Docker Image |
 | ----------------- |------------- |
 | dotnetcore 6.0   | [okteto/dotnetcore:6](dotnetcore/Dockerfile)|
-| golang 1.18       | [okteto/golang:1](golang/Dockerfile)|
+| golang 1.19       | [okteto/golang:1](golang/Dockerfile)|
 | jdk 8, Gradle 6.5  | [okteto/gradle:6.5](gradle/Dockerfile)|
 | jdk 11, Maven 3    | [okteto/maven:3-openjdk](maven/Dockerfile)|
 | node 16           | [okteto/node:16](node/Dockerfile)|
