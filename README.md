@@ -7,17 +7,17 @@ The development container can be any docker image. More information about develo
 The development containers on this list are maintained by the Okteto team to help you get started:
 
 ## General Use
-| Language/Stack    | Docker Image |
-| ----------------- |------------- |
-| dotnetcore 6.0   | [okteto/dotnetcore:6](dotnetcore/Dockerfile)|
-| golang 1.19       | [okteto/golang:1](golang/Dockerfile)|
-| jdk 8, Gradle 6.5  | [okteto/gradle:6.5](gradle/Dockerfile)|
-| jdk 11, Maven 3    | [okteto/maven:3-openjdk](maven/Dockerfile)|
-| node 16           | [okteto/node:16](node/Dockerfile)|
-| php 7      | [okteto/php:7](php/Dockerfile)|
-| python 3      | [okteto/python:3](python/Dockerfile)|
-| ruby 2      | [okteto/ruby:2](ruby/Dockerfile)|
-| rust      | [okteto/rust:1](rust/Dockerfile)|
+| Language/Stack    | Docker Image                                 |
+|-------------------|----------------------------------------------|
+| dotnetcore 6.0    | [okteto/dotnetcore:6](dotnetcore/Dockerfile) |
+| golang 1.19       | [okteto/golang:1](golang/Dockerfile)         |
+| jdk 8, Gradle 6.5 | [okteto/gradle:6.5](gradle/Dockerfile)       |
+| jdk 11, Maven 3   | [okteto/maven:3-openjdk](maven/Dockerfile)   |
+| node 18           | [okteto/node:18](node/Dockerfile)            |
+| php 7             | [okteto/php:7](php/Dockerfile)               |
+| python 3          | [okteto/python:3](python/Dockerfile)         |
+| ruby 2            | [okteto/ruby:2](ruby/Dockerfile)             |
+| rust              | [okteto/rust:1](rust/Dockerfile)             |
 
 # Contributions
 
