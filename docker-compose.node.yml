@@ -1,6 +1,13 @@
 version: '3.7'
 
 services:
+  node18:
+    image: okteto/node:18
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 18
   node16:
     image: okteto/node:16
     build:
