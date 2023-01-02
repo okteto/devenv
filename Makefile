@@ -1,19 +1,19 @@
 .PHONY: build
 
 build: 
-	docker buildx bake -f docker-compose.dev.yml \
+	echo "Building dev" && docker buildx bake -f docker-compose.dev.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.golang.yml \
+	echo "Building golang" && docker buildx bake -f docker-compose.golang.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.node.yml \
+	echo "Building node" && docker buildx bake -f docker-compose.node.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.php.yml \
+	echo "Building php" && docker buildx bake -f docker-compose.php.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.python.yml \
+	echo "Building python" && docker buildx bake -f docker-compose.python.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose.ruby.yml \
+	echo "Building ruby" && docker buildx bake -f docker-compose.ruby.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose-without-arm.yml \
+	echo "Building without arm" && docker buildx bake -f docker-compose-without-arm.yml \
 		--set "*.platform=linux/amd64"
 
 push:
