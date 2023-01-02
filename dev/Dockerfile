@@ -15,7 +15,7 @@ RUN apt-get -y update && \
     add-apt-repository -y ppa:longsleep/golang-backports && \
     apt-get -y update && \
     apt-get install -y golang-go ruby-full nodejs yarn && \
-    gem install bundler && \
+    gem install bundler -v 2.3.26 && \
     apt-get clean -y && apt-get autoremove -y
     
 RUN rm /etc/update-motd.d/*

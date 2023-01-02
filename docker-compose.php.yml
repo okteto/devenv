@@ -1,8 +1,19 @@
 version: '3.7'
 
 services:
-  php:
+  php7:
     image: okteto/php:7
     build:
       context: .
       dockerfile: php/Dockerfile
+      args:
+        PHP_VERSION: 7
+        XDEBUG_VERSION: 2
+  php8:
+    image: okteto/php:8
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+      args:
+        PHP_VERSION: 8
+        XDEBUG_VERSION: 3
