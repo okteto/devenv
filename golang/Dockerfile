@@ -1,4 +1,4 @@
-ARG VERSION=1.19
+ARG VERSION=1.20
 FROM golang:$VERSION-buster
 
 WORKDIR /usr/src/app

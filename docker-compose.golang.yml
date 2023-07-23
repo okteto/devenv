@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: 1.20
+        VERSION: "1.20"
   
   golang1.20:
     image: okteto/golang:1.20
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: 1.20
+        VERSION: "1.20"
 
   golang1.19:
     image: okteto/golang:1.19
@@ -23,7 +23,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: 1.19
+        VERSION:  "1.19"
 
   golang1.18:
     image: okteto/golang:1.18
@@ -31,4 +31,4 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: 1.18
+        VERSION: "1.18"
