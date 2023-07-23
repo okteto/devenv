@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  gradle:
+    image: okteto/gradle:8.2.1-jdk17
+    build:
+      context: .
+      dockerfile: gradle/Dockerfile
+      args:
+        VERSION: "8.2.1-jdk17"
+  maven:
+    image: okteto/maven:3
+    build:
+      context: .
+      dockerfile: maven/Dockerfile
+      args:
+        VERSION: "3"
+
