@@ -1,7 +1,12 @@
 version: '3.7'
 
 services:
-  gradle:
+  gradle6:
+    image: okteto/gradle:6.5
+    build:
+      context: .
+      dockerfile: gradle/Dockerfile
+  gradle8:
     image: okteto/gradle:8.2.1-jdk17
     build:
       context: .
