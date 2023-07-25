@@ -13,7 +13,9 @@ build:
 		--set "*.platform=linux/amd64,linux/arm64"
 	echo "Building ruby" && docker buildx bake -f docker-compose.ruby.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
-	echo "Building without arm" && docker buildx bake -f docker-compose-without-arm.yml \
+	echo "Building java" && docker buildx bake -f docker-compose.java.yml \
+		--set "*.platform=linux/amd64"
+	echo "Building dotnet" && docker buildx bake -f docker-compose.dotnet.yml \
 		--set "*.platform=linux/amd64"
 
 push:
@@ -35,7 +37,10 @@ push:
 	docker buildx bake -f docker-compose.ruby.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
-	docker buildx bake -f docker-compose-without-arm.yml \
+	docker buildx bake -f docker-compose.java.yml \
+		--push \
+		--set "*.platform=linux/amd64"
+	docker buildx bake -f docker-compose.dotnet.yml \
 		--push \
 		--set "*.platform=linux/amd64"
 

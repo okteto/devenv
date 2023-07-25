@@ -1,4 +1,4 @@
-ARG VERSION=6.5
+ARG VERSION=8.2.1-jdk17
 FROM gradle:$VERSION
 
 WORKDIR /usr/src/app

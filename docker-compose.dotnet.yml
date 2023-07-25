@@ -16,14 +16,4 @@ services:
       args:
         VERSION: "6.0"
 
-  gradle:
-    image: okteto/gradle:6.5
-    build:
-      context: .
-      dockerfile: gradle/Dockerfile
-
-  maven:
-    image: okteto/maven:3
-    build:
-      context: .
-      dockerfile: maven/Dockerfile
+  
