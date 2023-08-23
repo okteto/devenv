@@ -1,5 +1,6 @@
 ARG VERSION="1.21"
-FROM golang:${VERSION}-buster
+ARG DEBIAN_VERSION="bookworm"
+FROM golang:${VERSION}-${DEBIAN_VERSION}
 
 WORKDIR /usr/src/app
 
