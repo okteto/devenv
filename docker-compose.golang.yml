@@ -10,12 +10,12 @@ services:
         VERSION: "1.21"
 
   golang1.21:
-  image: okteto/golang:1.21
-  build:
-    context: .
-    dockerfile: golang/Dockerfile
-    args:
-      VERSION: "1.21"
+    image: okteto/golang:1.21
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: "1.21"
 
   golang1.20:
     image: okteto/golang:1.20
