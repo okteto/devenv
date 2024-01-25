@@ -15,17 +15,3 @@ services:
       dockerfile: node/Dockerfile
       args:
         VERSION: 18
-  node16:
-    image: okteto/node:16
-    build:
-      context: .
-      dockerfile: node/Dockerfile
-      args:
-        VERSION: 16
-  node14:
-    image: okteto/node:14
-    build:
-      context: .
-      dockerfile: node/Dockerfile
-      args:
-        VERSION: 14
