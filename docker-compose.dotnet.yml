@@ -15,5 +15,12 @@ services:
       dockerfile: dotnetcore/Dockerfile
       args:
         VERSION: "6.0"
+  dotnetcore8:
+    image: okteto/dotnetcore:8
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: "8.0"
 
   
