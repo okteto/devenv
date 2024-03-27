@@ -1,4 +1,4 @@
-ARG VERSION=6.0
+ARG VERSION=8.0
 FROM mcr.microsoft.com/dotnet/sdk:$VERSION as base
 
 RUN apt-get update && apt-get install -y unzip
