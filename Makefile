@@ -17,6 +17,8 @@ build:
 		--set "*.platform=linux/amd64"
 	echo "Building dotnet" && docker buildx bake -f docker-compose.dotnet.yml \
 		--set "*.platform=linux/amd64"
+	echo "Building helm" && docker buildx bake -f docker-compose.helm.yml \
+		--set "*.platform=linux/amd64"
 
 push:
 	docker buildx bake -f docker-compose.dev.yml \
@@ -41,6 +43,9 @@ push:
 		--push \
 		--set "*.platform=linux/amd64"
 	docker buildx bake -f docker-compose.dotnet.yml \
+		--push \
+		--set "*.platform=linux/amd64"
+	docker buildx bake -f docker-compose.helm.yml \
 		--push \
 		--set "*.platform=linux/amd64"
 

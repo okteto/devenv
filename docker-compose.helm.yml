@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  helm3.14.4:
+    image: okteto/helm:3.14.4
+    build:
+      context: .
+      dockerfile: helm/Dockerfile
+      args:
+        VERSION: "3.14.4"
+        PLUGIN_UNITTEST_VERSION: "0.3.0"
