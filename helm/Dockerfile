@@ -1,7 +1,7 @@
 FROM golang:1.22-bookworm
 
-ARG VERSION=3.14.4
-ARG PLUGIN_UNITTEST_VERSION=0.3.0
+ARG VERSION=3.16.2
+ARG PLUGIN_UNITTEST_VERSION=0.6.3
 
 RUN curl -sLf --retry 3 -o helm.tar.gz https://get.helm.sh/helm-v${VERSION}-linux-amd64.tar.gz && \
     mkdir -p helm && tar -C helm -xf helm.tar.gz && \
