@@ -32,6 +32,8 @@ services:
       dockerfile: golang/Dockerfile
       args:
         VERSION: "1.21"
+        # Need to override this because default value doesn't work with this golang version
+        CONTROLLER_GEN_VERSION: "v0.14.0"
 
   golang1.20:
     image: okteto/golang:1.20
@@ -41,3 +43,5 @@ services:
       args:
         VERSION: "1.20"
         DEBIAN_VERSION: "buster"
+        # Need to override this because default value doesn't work with this golang version
+        CONTROLLER_GEN_VERSION: "v0.14.0"
