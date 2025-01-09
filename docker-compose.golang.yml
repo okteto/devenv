@@ -39,6 +39,6 @@ services:
         # Need to override this because default value doesn't work with this golang version
         CONTROLLER_GEN_VERSION: "v0.14.0"
         # Need to override this because newever versions of AIR doesn't work with this golang version
-        AIR_VERSION: "v1.42.0"
+        AIR_VERSION: "v1.49.0"
         # Need to override this because newever versions of gopls doesn't work with this golang version
         GOPLS_VERSION: "v0.16.1"

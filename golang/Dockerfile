@@ -16,6 +16,6 @@ RUN go install github.com/codegangsta/gin@latest && \
     go install github.com/go-delve/delve/cmd/dlv@${DLV_VERSION} && \
     go install golang.org/x/tools/gopls@${GOPLS_VERSION} && \
     go install sigs.k8s.io/controller-tools/cmd/controller-gen@${CONTROLLER_GEN_VERSION} && \
-    go install github.com/air-verse/air@${AIR_VERSION}
+    curl -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b /usr/bin -d ${AIR_VERSION}ggt
 
 CMD ["bash"]
