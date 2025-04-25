@@ -11,16 +11,6 @@ RUN go install github.com/codegangsta/gin@latest && \
     go install github.com/go-delve/delve/cmd/dlv@${DLV_VERSION} && \
     go install golang.org/x/tools/gopls@${GOPLS_VERSION} && \
     go install sigs.k8s.io/controller-tools/cmd/controller-gen@${CONTROLLER_GEN_VERSION} && \
-    curl -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b /usr/bin -d ${AIR_VERSION}
-
-
-FROM golang:${VERSION}-${DEBIAN_VERSION}
-WORKDIR /usr/src/app
-
-# setup okteto message
-COPY bashrc /root/.bashrc
-
-COPY --from=build /usr/bin/air /usr/bin/air
-COPY --from=build /go/bin /go/bin
+    curl --retry 5 -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b /usr/bin -d ${AIR_VERSION}
 
 CMD ["bash"]
