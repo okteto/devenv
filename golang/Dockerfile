@@ -1,6 +1,6 @@
-ARG GOLANG_VERSION="1.24.2"
+ARG VERSION="1.24.2"
 ARG DEBIAN_VERSION="bookworm"
-FROM golang:${GOLANG_VERSION}-${DEBIAN_VERSION} as build
+FROM golang:${VERSION}-${DEBIAN_VERSION} as build
 
 ARG CONTROLLER_GEN_VERSION="v0.17.3"
 ARG DLV_VERSION="latest"
@@ -14,7 +14,7 @@ RUN go install github.com/codegangsta/gin@latest && \
     curl -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b /usr/bin -d ${AIR_VERSION}
 
 
-FROM golang:${GOLANG_VERSION}-${DEBIAN_VERSION}
+FROM golang:${VERSION}-${DEBIAN_VERSION}
 WORKDIR /usr/src/app
 
 # setup okteto message
