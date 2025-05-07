@@ -5,3 +5,8 @@ services:
     build:
       context: .
       dockerfile: dev/Dockerfile
+ dev1:
+    image: okteto/dev:1.0
+    build:
+      context: .
+      dockerfile: dev/Dockerfile
