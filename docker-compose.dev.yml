@@ -1,7 +1,12 @@
 version: '3.7'
 services:
  dev:
-    image: okteto/dev:${DOCKER_TAG:-latest}
+    image: okteto/dev:latest
+    build:
+      context: .
+      dockerfile: dev/Dockerfile
+ dev1:
+    image: okteto/dev:1.0
     build:
       context: .
       dockerfile: dev/Dockerfile
