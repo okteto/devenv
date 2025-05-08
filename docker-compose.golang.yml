@@ -7,8 +7,18 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.23"
+        VERSION: "1.24"
+        CONTROLLER_GEN_VERSION: "v0.17.3"
 
+  golang1.24:
+    image: okteto/golang:1.24
+    build:
+      context: .
+      dockerfile: golang/Dockerfile
+      args:
+        VERSION: "1.24"
+        CONTROLLER_GEN_VERSION: "v0.17.3"
+        
   golang1.23:
     image: okteto/golang:1.23
     build:
@@ -16,6 +26,8 @@ services:
       dockerfile: golang/Dockerfile
       args:
         VERSION: "1.23"
+        # Need to override this because newer versions of controller-gen don't work with this golang version
+        CONTROLLER_GEN_VERSION: "v0.16.5"
 
   golang1.22:
     image: okteto/golang:1.22
@@ -24,21 +36,10 @@ services:
       dockerfile: golang/Dockerfile
       args:
         VERSION: "1.22"
-        # Need to override this because newever versions of gopls doesn't work with this golang version
+        # Need to override this because newer versions of gopls don't work with this golang version
         GOPLS_VERSION: "v0.16.1"
-        # Need to override this because newever versions of AIR doesn't work with this golang version
-        AIR_VERSION: "v1.52.3"
 
-  golang1.21:
-    image: okteto/golang:1.21
-    build:
-      context: .
-      dockerfile: golang/Dockerfile
-      args:
-        VERSION: "1.21"
-        # Need to override this because default value doesn't work with this golang version
-        CONTROLLER_GEN_VERSION: "v0.14.0"
-        # Need to override this because newever versions of AIR doesn't work with this golang version
-        AIR_VERSION: "v1.49.0"
-        # Need to override this because newever versions of gopls doesn't work with this golang version
-        GOPLS_VERSION: "v0.16.1"
+        # Need to override this because newer versions of controller-gen don't work with this golang version
+        CONTROLLER_GEN_VERSION: "v0.16.5"
+        # Need to override this because newer versions of AIR don't work with this golang version
+        AIR_VERSION: "v1.52.3"
