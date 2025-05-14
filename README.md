@@ -2,7 +2,7 @@
 
 When you run `okteto up` the container running your application is replaced by a development container that contains your development tools (e.g. maven and jdk, or npm, python, go compiler, debuggers, etc).
 
-The development container can be any docker image. More information about development containers, and how to build your own [is available here](https://okteto.com/docs/reference/development-environment/index.html).
+The development container can be any Docker image. More information about development containers and how to build your own is available here (https://okteto.com/docs/reference/development-environment/index.html).
 
 The development containers on this list are maintained by the Okteto team to help you get started:
 
@@ -10,7 +10,7 @@ The development containers on this list are maintained by the Okteto team to hel
 | Language/Stack    | Docker Image                                 |
 |-------------------|----------------------------------------------|
 | dotnetcore 8.0    | [okteto/dotnetcore:8](dotnetcore/Dockerfile) |
-| golang 1.23       | [okteto/golang:1](golang/Dockerfile)         |
+| golang 1.24       | [okteto/golang:1](golang/Dockerfile)         |
 | jdk 17, Gradle 8.2 | [okteto/gradle:6.5](gradle/Dockerfile)       |
 | jdk 17, Maven 3   | [okteto/maven:3-openjdk](maven/Dockerfile)   |
 | node 20           | [okteto/node:20](node/Dockerfile)            |
@@ -21,6 +21,6 @@ The development containers on this list are maintained by the Okteto team to hel
 
 # Contributions
 
-Are missing your favorite stack or language? Contributions are encouraged in the form of issues, feature requests, or PRs.
+Are we missing your favorite stack or language? Contributions are encouraged through issues, feature requests, or PRs.
 
 This project adheres to the Contributor Covenant [code of conduct](https://github.com/okteto/okteto/blob/master/code-of-conduct.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to hello@okteto.com.
