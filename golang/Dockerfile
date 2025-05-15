@@ -15,4 +15,7 @@ RUN go install github.com/codegangsta/gin@latest && \
 
 WORKDIR /usr/src/app
 
+# setup okteto message
+COPY bashrc /root/.bashrc
+
 CMD ["bash"]
