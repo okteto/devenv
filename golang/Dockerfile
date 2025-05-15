@@ -13,4 +13,9 @@ RUN go install github.com/codegangsta/gin@latest && \
     go install sigs.k8s.io/controller-tools/cmd/controller-gen@${CONTROLLER_GEN_VERSION} && \
     curl --retry 5 --retry-all-errors -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b /usr/bin -d ${AIR_VERSION}
 
+WORKDIR /usr/src/app
+
+# setup okteto message
+COPY bashrc /root/.bashrc
+
 CMD ["bash"]
