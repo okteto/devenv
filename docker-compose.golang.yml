@@ -27,7 +27,7 @@ services:
       args:
         VERSION: "1.23.12"
         # Need to override this because newer versions of gopls don't work with this golang version
-        GOPLS_VERSION: "v0.19.0"
+        GOPLS_VERSION: "v0.17.1"
         # Need to override this because newer versions of controller-gen don't work with this golang version
         CONTROLLER_GEN_VERSION: "v0.16.5"
 
