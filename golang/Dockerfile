@@ -1,4 +1,4 @@
-ARG VERSION="1.24.2"
+ARG VERSION="1.24.6"
 ARG DEBIAN_VERSION="bookworm"
 FROM golang:${VERSION}-${DEBIAN_VERSION} as build
 
