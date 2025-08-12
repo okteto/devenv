@@ -6,12 +6,40 @@ on:
 
 jobs:
   build:
-    name: Test Build
+    name: Build ${{ matrix.service }}
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: .
+    
+    strategy:
+      matrix:
+        service: [dev, golang, node, php, python, ruby, java, dotnet, helm]
+        include:
+          - service: dev
+            compose_file: docker-compose.dev.yml
+            platforms: linux/amd64,linux/arm64
+          - service: golang
+            compose_file: docker-compose.golang.yml
+            platforms: linux/amd64,linux/arm64
+          - service: node
+            compose_file: docker-compose.node.yml
+            platforms: linux/amd64,linux/arm64
+          - service: php
+            compose_file: docker-compose.php.yml
+            platforms: linux/amd64,linux/arm64
+          - service: python
+            compose_file: docker-compose.python.yml
+            platforms: linux/amd64,linux/arm64
+          - service: ruby
+            compose_file: docker-compose.ruby.yml
+            platforms: linux/amd64,linux/arm64
+          - service: java
+            compose_file: docker-compose.java.yml
+            platforms: linux/amd64
+          - service: dotnet
+            compose_file: docker-compose.dotnet.yml
+            platforms: linux/amd64
+          - service: helm
+            compose_file: docker-compose.helm.yml
+            platforms: linux/amd64
 
     steps:
       - name: Check out code
@@ -34,5 +62,7 @@ jobs:
         with:
           platforms: arm64,amd64
 
-      - name: "Build"
-        run: make build
+      - name: Build ${{ matrix.service }}
+        run: |
+          echo "Building ${{ matrix.service }}" && docker buildx bake -f ${{ matrix.compose_file }} \
+            --set "*.platform=${{ matrix.platforms }}"
