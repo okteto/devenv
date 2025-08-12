@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24"
+        VERSION: "1.24.6"
         CONTROLLER_GEN_VERSION: "v0.17.3"
 
   golang1.24:
@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24"
+        VERSION: "1.24.6"
         CONTROLLER_GEN_VERSION: "v0.17.3"
         
   golang1.23:
