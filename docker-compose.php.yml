@@ -16,7 +16,7 @@ services:
       context: .
       dockerfile: php/Dockerfile
       args:
-        PHP_VERSION: 8
+        PHP_VERSION: 8.4
         XDEBUG_VERSION: 3
       tags:
         - okteto/php:8
