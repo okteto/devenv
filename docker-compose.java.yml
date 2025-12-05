@@ -2,25 +2,31 @@ version: '3.7'
 
 services:
   gradle6:
-    image: okteto/gradle:6.5
     build:
       context: .
       dockerfile: gradle/Dockerfile
       args:
-        VERSION: "6.5.1" 
-       
+        VERSION: "6.5.1"
+      tags:
+        - okteto/gradle:6.5
+        - ghcr.io/okteto/gradle:6.5
+
   gradle8:
-    image: okteto/gradle:8.2.1-jdk17
     build:
       context: .
       dockerfile: gradle/Dockerfile
       args:
         VERSION: "8.2.1-jdk17"
+      tags:
+        - okteto/gradle:8.2.1-jdk17
+        - ghcr.io/okteto/gradle:8.2.1-jdk17
   maven:
-    image: okteto/maven:3
     build:
       context: .
       dockerfile: maven/Dockerfile
       args:
         VERSION: "3"
+      tags:
+        - okteto/maven:3
+        - ghcr.io/okteto/maven:3
 
