@@ -2,7 +2,9 @@ version: '3.7'
 
 services:
   ruby:
-    image: okteto/ruby:2
     build:
       context: .
       dockerfile: ruby/Dockerfile
+      tags:
+        - okteto/ruby:2
+        - ghcr.io/okteto/ruby:2

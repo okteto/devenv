@@ -2,10 +2,12 @@ version: '3.7'
 
 services:
   helm3.14.4:
-    image: okteto/helm:3.16.2
     build:
       context: .
       dockerfile: helm/Dockerfile
       args:
         VERSION: "3.16.2"
         PLUGIN_UNITTEST_VERSION: "0.6.3"
+      tags:
+        - okteto/helm:3.16.2
+        - ghcr.io/okteto/helm:3.16.2
