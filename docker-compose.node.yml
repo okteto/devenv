@@ -10,12 +10,12 @@ services:
       tags:
         - okteto/node:20
         - ghcr.io/okteto/node:20
-  node18:
+  node22:
     build:
       context: .
       dockerfile: node/Dockerfile
       args:
-        VERSION: 18
+        VERSION: 22
       tags:
-        - okteto/node:18
-        - ghcr.io/okteto/node:18
+        - okteto/node:22
+        - ghcr.io/okteto/node:22

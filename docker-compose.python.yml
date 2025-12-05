@@ -1,15 +1,6 @@
 version: '3.7'
 
 services:
-  python3:
-    build:
-      context: .
-      dockerfile: python/Dockerfile
-      args:
-        VERSION: 3
-      tags:
-        - okteto/python:3
-        - ghcr.io/okteto/python:3
   python2:
     build:
       context: .
@@ -19,3 +10,12 @@ services:
       tags:
         - okteto/python:2
         - ghcr.io/okteto/python:2
+  python3:
+    build:
+      context: .
+      dockerfile: python/Dockerfile
+      args:
+        VERSION: 3
+      tags:
+        - okteto/python:3
+        - ghcr.io/okteto/python:3
