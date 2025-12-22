@@ -25,5 +25,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
 
 WORKDIR /usr/src/app
 
+
+# setup okteto message
 COPY bashrc /root/.bashrc
 CMD ["bash"]
