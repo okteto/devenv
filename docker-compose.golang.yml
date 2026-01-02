@@ -33,6 +33,8 @@ services:
         GOPLS_VERSION: "v0.17.1"
         # Need to override this because newer versions of controller-gen don't work with this golang version
         CONTROLLER_GEN_VERSION: "v0.16.5"
+        # Need to override this because newer versions of controller-gen don't work with this golang version
+        DLV_VERSION: "v1.25.2"
       tags:
         - okteto/golang:1.23
         - ghcr.io/okteto/golang:1.23
