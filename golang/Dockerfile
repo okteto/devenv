@@ -14,7 +14,7 @@ RUN go install github.com/codegangsta/gin@latest && \
     go install github.com/go-delve/delve/cmd/dlv@${DLV_VERSION} && \
     go install golang.org/x/tools/gopls@${GOPLS_VERSION} && \
     go install sigs.k8s.io/controller-tools/cmd/controller-gen@${CONTROLLER_GEN_VERSION} && \
-    curl -fsSL "https://github.com/cosmtrek/air/releases/download/${AIR_VERSION}/air_${AIR_VERSION#v}_linux_${TARGETARCH}.tar.gz" | tar -xz -C /usr/local/bin air
+    curl -fsSL "https://github.com/air-verse/air/releases/download/${AIR_VERSION}/air_${AIR_VERSION#v}_linux_${TARGETARCH}.tar.gz" | tar -xz -C /usr/local/bin air
 
 WORKDIR /usr/src/app
 
