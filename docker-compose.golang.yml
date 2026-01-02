@@ -6,8 +6,10 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24.9"
+        VERSION: "1.24.11"
         CONTROLLER_GEN_VERSION: "v0.17.3"
+        # Need to override this because newer versions of gopls don't work with this golang version
+        GOPLS_VERSION: "v0.20.0"
       tags:
         - okteto/golang:1
         - ghcr.io/okteto/golang:1
@@ -17,8 +19,10 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24.9"
+        VERSION: "1.24.11"
         CONTROLLER_GEN_VERSION: "v0.17.3"
+        # Need to override this because newer versions of gopls don't work with this golang version
+        GOPLS_VERSION: "v0.20.0"
       tags:
         - okteto/golang:1.24
         - ghcr.io/okteto/golang:1.24
@@ -33,6 +37,8 @@ services:
         GOPLS_VERSION: "v0.17.1"
         # Need to override this because newer versions of controller-gen don't work with this golang version
         CONTROLLER_GEN_VERSION: "v0.16.5"
+        # Need to override this because newer versions of controller-gen don't work with this golang version
+        DLV_VERSION: "v1.25.2"
       tags:
         - okteto/golang:1.23
         - ghcr.io/okteto/golang:1.23
