@@ -13,9 +13,6 @@ jobs:
       matrix:
         service: [dev, golang, node, php, python, ruby, java, dotnet, helm]
         include:
-          - service: dev
-            compose_file: docker-compose.dev.yml
-            platforms: linux/amd64,linux/arm64
           - service: golang
             compose_file: docker-compose.golang.yml
             platforms: linux/amd64,linux/arm64
