@@ -4,7 +4,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.25.5"
+        VERSION: "1.25.7"
         CONTROLLER_GEN_VERSION: "v0.20.0"
       tags:
         - okteto/golang:1
@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24.11"
+        VERSION: "1.24.12"
         CONTROLLER_GEN_VERSION: "v0.17.3"
         GOPLS_VERSION: "v0.20.0"
         DLV_VERSION: "v1.26.0"

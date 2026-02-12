@@ -1,8 +1,6 @@
 .PHONY: build
 
 build: 
-	echo "Building dev" && docker buildx bake -f docker-compose.dev.yml \
-		--set "*.platform=linux/amd64,linux/arm64"
 	echo "Building golang" && docker buildx bake -f docker-compose.golang.yml \
 		--set "*.platform=linux/amd64,linux/arm64"
 	echo "Building node" && docker buildx bake -f docker-compose.node.yml \
@@ -21,9 +19,6 @@ build:
 		--set "*.platform=linux/amd64"
 
 push:
-	docker buildx bake -f docker-compose.dev.yml \
-		--push \
-		--set "*.platform=linux/amd64,linux/arm64"
 	docker buildx bake -f docker-compose.golang.yml \
 		--push \
 		--set "*.platform=linux/amd64,linux/arm64"
