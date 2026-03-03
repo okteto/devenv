@@ -6,5 +6,5 @@ services:
       context: .
       dockerfile: ruby/Dockerfile
       tags:
-        - okteto/ruby:2
-        - ghcr.io/okteto/ruby:2
+        - okteto/ruby:4
+        - ghcr.io/okteto/ruby:4
