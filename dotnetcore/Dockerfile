@@ -1,5 +1,5 @@
 ARG VERSION=8.0
-FROM mcr.microsoft.com/dotnet/sdk:$VERSION as base
+FROM mcr.microsoft.com/dotnet/sdk:$VERSION AS base
 
 RUN apt-get update && apt-get install -y unzip procps && \
     curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /root/vsdbg && \
