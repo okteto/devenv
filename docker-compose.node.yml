@@ -1,6 +1,16 @@
 version: '3.7'
 
 services:
+  node26:
+    build:
+      context: .
+      dockerfile: node/Dockerfile
+      args:
+        VERSION: 26
+      tags:
+        - okteto/node:26
+        - ghcr.io/okteto/node:26
+
   node24:
     build:
       context: .
@@ -10,13 +20,3 @@ services:
       tags:
         - okteto/node:24
         - ghcr.io/okteto/node:24
-
-  node22:
-    build:
-      context: .
-      dockerfile: node/Dockerfile
-      args:
-        VERSION: 22
-      tags:
-        - okteto/node:22
-        - ghcr.io/okteto/node:22

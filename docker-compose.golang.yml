@@ -4,23 +4,23 @@ services:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.25.7"
-        CONTROLLER_GEN_VERSION: "v0.20.0"
+        VERSION: "1.26.5"
+        CONTROLLER_GEN_VERSION: "v0.21.0"
       tags:
         - okteto/golang:1
-        - okteto/golang:1.25
+        - okteto/golang:1.26
         - ghcr.io/okteto/golang:1
-        - ghcr.io/okteto/golang:1.25
+        - ghcr.io/okteto/golang:1.26
 
-  golang1.24:
+  golang1.25:
     build:
       context: .
       dockerfile: golang/Dockerfile
       args:
-        VERSION: "1.24.12"
-        CONTROLLER_GEN_VERSION: "v0.17.3"
-        GOPLS_VERSION: "v0.20.0"
-        DLV_VERSION: "v1.26.0"
+        VERSION: "1.25.12"
+        # Need to override these because newer versions require the golang 1.26 toolchain
+        CONTROLLER_GEN_VERSION: "v0.20.1"
+        GOPLS_VERSION: "v0.21.1"
       tags:
-        - okteto/golang:1.24
-        - ghcr.io/okteto/golang:1.24
+        - okteto/golang:1.25
+        - ghcr.io/okteto/golang:1.25
