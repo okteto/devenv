@@ -3,10 +3,10 @@ FROM mcr.microsoft.com/dotnet/sdk:$VERSION AS base
 
 RUN apt-get update && apt-get install -y unzip procps && \
     curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /root/vsdbg && \
-    curl -L "https://data.services.jetbrains.com/products/download?code=RRD&platform=linux64" -o /tmp/RiderRemoteDebugger.zip && \
+    curl -fsSL "https://data.services.jetbrains.com/products/download?code=RRD&platform=linux64" -o /tmp/RiderRemoteDebugger.zip && \
     mkdir -p /root/.local/share/JetBrains/RiderRemoteDebugger/2024.1 && \
     unzip -o /tmp/RiderRemoteDebugger.zip -d /root/.local/share/JetBrains/RiderRemoteDebugger/2024.1 && \
-    curl -L "https://download.jetbrains.com/rider/ssh-remote-debugging/linux-x64/jetbrains_debugger_agent_20230319.24.0" -o /usr/local/bin/debugger && \
+    curl -fsSL "https://download.jetbrains.com/rider/ssh-remote-debugging/linux-x64/jetbrains_debugger_agent_20230319.24.0" -o /usr/local/bin/debugger && \
     chmod +x /usr/local/bin/debugger && \
     rm -rf /var/lib/apt/lists/*
     
