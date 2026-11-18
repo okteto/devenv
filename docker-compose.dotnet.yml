@@ -19,5 +19,14 @@ services:
       tags:
         - okteto/dotnetcore:8
         - ghcr.io/okteto/dotnetcore:8
+  dotnetcore10:
+    build:
+      context: .
+      dockerfile: dotnetcore/Dockerfile
+      args:
+        VERSION: "10.0"
+      tags:
+        - okteto/dotnetcore:10
+        - ghcr.io/okteto/dotnetcore:10
 
   
