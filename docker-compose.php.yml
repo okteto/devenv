@@ -1,16 +1,6 @@
 version: '3.7'
 
 services:
-  php7:
-    build:
-      context: .
-      dockerfile: php/Dockerfile
-      args:
-        PHP_VERSION: 7
-        XDEBUG_VERSION: 2
-      tags:
-        - okteto/php:7
-        - ghcr.io/okteto/php:7
   php8:
     build:
       context: .
