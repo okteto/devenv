@@ -1,4 +1,0 @@
-name: dev
-image: okteto/dev:latest
-command:
-- bash
