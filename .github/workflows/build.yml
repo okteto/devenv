@@ -11,7 +11,7 @@ jobs:
     
     strategy:
       matrix:
-        service: [golang, node, php, python, ruby, java, dotnet, helm]
+        service: [golang, node]
         include:
           - service: golang
             compose_file: docker-compose.golang.yml
@@ -19,24 +19,6 @@ jobs:
           - service: node
             compose_file: docker-compose.node.yml
             platforms: linux/amd64,linux/arm64
-          - service: php
-            compose_file: docker-compose.php.yml
-            platforms: linux/amd64,linux/arm64
-          - service: python
-            compose_file: docker-compose.python.yml
-            platforms: linux/amd64,linux/arm64
-          - service: ruby
-            compose_file: docker-compose.ruby.yml
-            platforms: linux/amd64,linux/arm64
-          - service: java
-            compose_file: docker-compose.java.yml
-            platforms: linux/amd64
-          - service: dotnet
-            compose_file: docker-compose.dotnet.yml
-            platforms: linux/amd64
-          - service: helm
-            compose_file: docker-compose.helm.yml
-            platforms: linux/amd64
 
     steps:
       - name: Check out code
