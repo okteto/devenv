@@ -1,5 +1,3 @@
-version: '3.7'
-
 services:
   node26:
     build:
@@ -10,13 +8,3 @@ services:
       tags:
         - okteto/node:26
         - ghcr.io/okteto/node:26
-
-  node24:
-    build:
-      context: .
-      dockerfile: node/Dockerfile
-      args:
-        VERSION: 24
-      tags:
-        - okteto/node:24
-        - ghcr.io/okteto/node:24
